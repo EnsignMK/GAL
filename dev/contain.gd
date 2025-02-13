@@ -62,7 +62,7 @@ func create_preview_pattern(pattern:TileMapPattern, name:String):
 		img.blit_rect(small_image, small_image.get_used_rect(), coord) 
 	 # Save the composed image to the specified path
 	ResourceSaver.save(img, path)
-	#img.save_png("C:/Users/build/Documents/" +name+".png")
+	
 	
 
 	
@@ -100,10 +100,7 @@ func _on_save_pressed() -> void:
 		get_child(-1).show()
 	save.release_focus()
 	
-func _on_button_pressed() -> void:
-	print("dummt works")
-	var pe = load("res://patterns/pi.tres")
-	tilemap_editor.set_pattern(Vector2i(10,10)-Vector2i(0,3),pe)
+
 	
 func text_from_save(name:String):
 	print("succesful name transfer")

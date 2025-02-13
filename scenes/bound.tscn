@@ -343,15 +343,10 @@ text = "save"
 layout_mode = 2
 text = "clear"
 
-[node name="Button" type="Button" parent="ButtonHolder/HBoxContainer"]
-layout_mode = 2
-text = "dummy"
-
 [node name="back" type="Button" parent="ButtonHolder/HBoxContainer"]
 layout_mode = 2
 text = "back"
 
 [connection signal="pressed" from="ButtonHolder/HBoxContainer/Save" to="contain" method="_on_save_pressed"]
 [connection signal="pressed" from="ButtonHolder/HBoxContainer/clear" to="contain" method="_on_clear_pressed"]
-[connection signal="pressed" from="ButtonHolder/HBoxContainer/Button" to="contain" method="_on_button_pressed"]
 [connection signal="pressed" from="ButtonHolder/HBoxContainer/back" to="contain" method="_on_back_pressed"]
