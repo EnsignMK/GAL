@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bkwqwg5g0ytwr"]
+
+[node name="MenuButton" type="MenuButton"]
+offset_right = 92.0
+offset_bottom = 31.0
+tooltip_text = "select your saved patterns or create them."
+theme_override_font_sizes/font_size = 16
+text = "patterns"
+flat = false
+switch_on_hover = true

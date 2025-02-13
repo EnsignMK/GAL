@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtcaaet88bpoo"]
+
+[ext_resource type="Script" path="res://dev/workhorse.gd" id="1_ueinq"]
+
+[node name="ControlPatterns" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -247.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+select_mode = 1
+allow_reselect = true
+item_count = 2
+icon_mode = 0
+item_0/text = "we test"
+item_1/text = "we area"
+script = ExtResource("1_ueinq")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -3.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Current Saved Patterns"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Panel"]
+title = "Confirm"
+initial_position = 2
+size = Vector2i(150, 100)
+unresizable = true
+
+[connection signal="item_clicked" from="Panel/ItemList" to="Panel/ItemList" method="_on_item_clicked"]
+[connection signal="canceled" from="Panel/AcceptDialog" to="Panel/ItemList" method="_on_accept_dialog_canceled"]
+[connection signal="confirmed" from="Panel/AcceptDialog" to="Panel/ItemList" method="_on_accept_dialog_confirmed"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://s4lp53nx6sbc"]
+
+[ext_resource type="Script" path="res://exp/menu_bar.gd" id="1_sgs78"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuBar" type="MenuBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Extra"
+script = ExtResource("1_sgs78")
+
+[node name="Pattern" type="PopupMenu" parent="MenuBar"]
+item_count = 3
+item_0/text = "glider"
+item_1/text = "spaceship"
+item_1/id = 1
+item_2/text = "create pattern"
+item_2/id = 2
+
+[connection signal="id_pressed" from="MenuBar/Pattern" to="MenuBar" method="_on_pattern_id_pressed"]
