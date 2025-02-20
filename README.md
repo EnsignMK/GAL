@@ -36,3 +36,11 @@ https://github.com/user-attachments/assets/7bb4b519-3343-40bd-ba4f-72a57d2d17ed
 4. Select the inner project folder (the one containing project.godot).
 5. Click "Open" to load the project.
 6. Click "Run" or press F5 to start the simulation.
+
+
+### Game files location
+#Windows: %APPDATA%\core_files
+#macOS: ~/Library/Application Support/core_files
+#Linux: ~/.local/share/core_files
+
+previews and patterns dirs are stored there
