@@ -19,7 +19,9 @@ func create_preview_pattern1(pattern:TileMapPattern,name:String):
 	var small_image:Image =  ALIVE_TILE_IMG.get_image()  # fetches a preloaded tile image
 	small_image.convert(Image.Format.FORMAT_RGBA8)  #it's import that they are the same format
 	
-	var path ="res://previews/"+str(name)+".tres"
+	
+	
+	var path ="user://previews/"+str(name)+".tres"
 	for u in used_cells:
 		var coord = u*tilesize
 		img.blit_rect(small_image,small_image.get_used_rect(),coord) #basically paste the small image inside the larger one 
@@ -54,7 +56,7 @@ func create_preview_pattern(pattern:TileMapPattern, name:String):
 	small_image.convert(Image.Format.FORMAT_RGBA8)  
 	
 	#(make sure you have created the previews folder!)
-	var path = "res://previews/" + str(name) + ".tres"  # Set the file path for the preview image 
+	var path = "user://previews/" + str(name) + ".tres"  # Set the file path for the preview image 
 	for u in used_cells:
 		# Calculate the pixel coordinate for each cell
 		var coord = u * tilesize  
@@ -109,7 +111,7 @@ func text_from_save(name:String):
 	var out =utils.alive_cells()
 	if out:
 		var pattern =  tilemap_editor.get_pattern(out)
-		var path = "res://patterns/"+ str(name)+".tres"
+		var path = "user://patterns/"+ str(name)+".tres"
 		ResourceSaver.save(pattern,path)
 		print("saved! name")
 		create_preview_pattern(pattern,name)

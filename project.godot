@@ -12,6 +12,9 @@ config_version=5
 
 config/name="Game_of_Life"
 run/main_scene="res://scenes/game.tscn"
+config/use_hidden_project_data_directory=false
+config/use_custom_user_dir=true
+config/custom_user_dir_name="core_files"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://tiles_pic/icon.svg"
 

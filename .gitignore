@@ -6,3 +6,9 @@ addons/
 *.tmp
 *.png.import
 *.cfg
+*.cache
+*.ctex
+*.md5
+*.bin
+godot/exported/
+godot/editor/

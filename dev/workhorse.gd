@@ -11,9 +11,9 @@ func remove_file(path:String):
 	DirAccess.remove_absolute(path)
 	
 func LoadPatternNames():
-	var current_patterns = DirAccess.get_files_at("res://patterns/")
-	var path ="res://patterns/"
-	var path_previews ="res://previews/"
+	var current_patterns = DirAccess.get_files_at("user://patterns/")
+	var path ="user://patterns/"
+	var path_previews ="user://previews/"
 	
 	for j in current_patterns:
 		var full_path =path+j

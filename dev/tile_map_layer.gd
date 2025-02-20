@@ -167,7 +167,7 @@ func _on_delete_all(toggled_on: bool) -> void:
 
 
 func LoadPreviews():
-	var path_preview ="res://previews/"
+	var path_preview ="user://previews/"
 	var current_previews = DirAccess.get_files_at(path_preview)
 	
 	for p in  current_previews:
@@ -178,8 +178,8 @@ func LoadPreviews():
 			
 			
 func LoadPatternNames():
-	var current_patterns = DirAccess.get_files_at("res://patterns/")
-	var path ="res://patterns/"
+	var current_patterns = DirAccess.get_files_at("user://patterns/")
+	var path ="user://patterns/"
 	
 	
 	for j in current_patterns:
@@ -214,4 +214,20 @@ func fill_the_tecture(image:Image):
 func _on_manage_pressed() -> void:
 	if PATTERN_MANGER:
 		get_tree().change_scene_to_packed(PATTERN_MANGER)
+		
+
+
+func _on_tree_entered() -> void:
+	
+#Windows: %APPDATA%\core_files
+#macOS: ~/Library/Application Support/core_files
+#Linux: ~/.local/share/core_files
+
+	if not DirAccess.dir_exists_absolute("user://previews"):
+		DirAccess.make_dir_absolute("user://previews")
+		
+	if not DirAccess.dir_exists_absolute("user://patterns"):
+		DirAccess.make_dir_absolute("user://patterns")
+		
+		
 		
